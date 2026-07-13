@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faux Referrals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app hidden" id="app">
+    <div class="backdrop"></div>
+    <section class="console">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo-frame"><img src="img/logo.png" alt=""></span>
+          <span>Faux Referrals</span>
+        </div>
+        <nav class="tabs" aria-label="Referral views">
+          <button class="tab active" type="button" data-tab="redeem">Redeem</button>
+          <button class="tab" type="button" data-tab="dashboard">Dashboard</button>
+          <button class="tab" type="button" data-tab="activity">Activity</button>
+        </nav>
+        <button class="close" type="button" data-close aria-label="Close"></button>
+      </header>
+
+      <section class="hero-strip">
+        <div>
+          <p class="eyebrow">Lighthouse Network</p>
+          <h1>Referral Console</h1>
+        </div>
+        <div class="signal-card">
+          <span>Your Access</span>
+          <strong data-access>Player</strong>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="redeem">
+        <form class="redeem-box" data-redeem-form>
+          <label for="referralCode">Referral Code</label>
+          <div class="redeem-row">
+            <input id="referralCode" name="code" autocomplete="off" maxlength="32" placeholder="RC1-00A or WELCOME26">
+            <button type="submit">Redeem</button>
+          </div>
+          <p data-result>Creator codes can be used once per player. Admin and management codes can stack, but each code can only be claimed once.</p>
+        </form>
+
+        <div class="reward-rack">
+          <article>
+            <span>Creator Rule</span>
+            <strong>One creator code per player</strong>
+          </article>
+          <article>
+            <span>Admin Rule</span>
+            <strong>Multiple codes allowed</strong>
+          </article>
+          <article>
+            <span>Tracking</span>
+            <strong>IC name + Discord ID ledger</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel hidden" data-panel="dashboard">
+        <div class="metric-grid" data-metrics></div>
+        <div class="code-grid" data-code-grid></div>
+      </section>
+
+      <section class="panel hidden" data-panel="activity">
+        <div class="activity-header">
+          <div>
+            <p class="eyebrow">Recent Claims</p>
+            <h2>Referral Ledger</h2>
+          </div>
+          <button type="button" data-refresh>Refresh</button>
+        </div>
+        <div class="activity-list" data-activity></div>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
